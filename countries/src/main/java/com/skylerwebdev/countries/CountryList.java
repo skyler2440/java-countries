@@ -1,11 +1,15 @@
 package com.skylerwebdev.countries;
 
+import org.springframework.boot.autoconfigure.condition.ConditionOutcome;
+
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.*;
 
 public class CountryList
 {
     //Create New Array List called countryList
-    public ArrayList<Country> countryList = new ArrayList<>();
+    public ArrayList<Country> countryList = new ArrayList<Country>();
 
     //Create Constructor and add Countries to ArrayList
     public  CountryList()
@@ -212,7 +216,6 @@ public class CountryList
         countryList.add(new Country("Antigua and Barbuda",104084,440,32));
         countryList.add(new Country("Seychelles",95702,460,36));
     }
-
     //find first country that matches filter
     public Country findCountry(CheckCountry tester)
     {
@@ -241,4 +244,9 @@ public class CountryList
         }
         return tempCountryList;
     }
+
+
+
+
+
 }

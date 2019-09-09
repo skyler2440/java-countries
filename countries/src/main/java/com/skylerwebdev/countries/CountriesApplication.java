@@ -13,5 +13,4 @@ public class CountriesApplication
         myCountryList = new CountryList();
         SpringApplication.run(CountriesApplication.class, args);
     }
-
 }

@@ -35,7 +35,15 @@ public class NamesController
 
 
     //localhost:8080/names/size/{number}
-//    @GetMapping(value = "/size/{number}",
-//            produces = {"application/json"})
+    @GetMapping(value = "/size/{number}",
+            produces = {"application/json"})
+    public ResponseEntity<?> getPopEquals(@PathVariable int number)
+    {
+        ArrayList<Country> rtnCntry = (CountriesApplication.myCountryList.
+                findCountries(c -> c.getCountryName().length() >= number ));
+        ArrayList<Country> sortArrayList = new ArrayList<>(rtnCntry);
+       sortArrayList.sort((c1, c2) -> c1.getCountryName().compareToIgnoreCase(c2.getCountryName()));
 
+        return new ResponseEntity<>(sortArrayList, HttpStatus.OK);
+    }
 }

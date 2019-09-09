@@ -1,17 +1,17 @@
 package com.skylerwebdev.countries;
 
 import java.util.concurrent.atomic.AtomicLong;
-
+import java.util.*;
 public class Country
 {
     private static final AtomicLong counter = new AtomicLong();
     private long id;
     private String countryName;
-    private int population;
+    private long population;
     private int landMassSize;
     private int medianAge;
 
-    public Country(String countryName, int population, int landMassSize, int medianAge)
+    public Country(String countryName, long population, int landMassSize, int medianAge)
     {
         this.id = counter.incrementAndGet();
         this.countryName = countryName;
@@ -48,12 +48,12 @@ public class Country
         this.countryName = countryName;
     }
 
-    public int getPopulation()
+    public long getPopulation()
     {
         return population;
     }
 
-    public void setPopulation(int population)
+    public void setPopulation(long population)
     {
         this.population = population;
     }
